@@ -1,8 +1,11 @@
 import 'package:absensi/common/widgets/images/t_circular_image.dart';
+import 'package:absensi/common/widgets/layouts/sidebars/menu/menu_item.dart';
+import 'package:absensi/routes/routes.dart';
 import 'package:absensi/utils/constans/colors.dart';
 import 'package:absensi/utils/constans/image_strings.dart';
 import 'package:absensi/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class TSidebar extends StatelessWidget {
   const TSidebar({super.key});
@@ -23,8 +26,8 @@ class TSidebar extends StatelessWidget {
           child: Column(
             //image
             children: [
-              TCircularImage(width: 110, height: 110, image: TImages.darkAppLogo, backgroundColor: Colors.transparent),
-              SizedBox(height: TSizes.spaceBtwSections),
+              const TCircularImage(width: 100, height: 100, image: TImages.darkAppLogo, backgroundColor: Colors.transparent),
+              const SizedBox(height: TSizes.spaceBtwSections),
               Padding(padding: EdgeInsets.all(TSizes.md),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,11 +36,11 @@ class TSidebar extends StatelessWidget {
                   Text('MENU', style: Theme.of(context).textTheme.bodySmall!.apply(letterSpacingDelta: 1.2)),
                 
 
-                //menu item
-                // const TMenuItem(route: TRoutes.firstScreen, icon: Iconsax.status, itemName: 'Dashboard'),
-                // const TMenuItem(route:TRoutes. secoundScreen, icon: Iconsax.image, itemName: 'Media'),
-                // const TMenuItem(route:TRoutes. responsiveDesignScreen, icon: Iconsax.picture_frame, itemName: 'Banners'),
-                ],
+     
+                const TMenuItem(route: TRoutes.dashboard, icon: Iconsax.status, itemName: 'Dashboard'),
+                const TMenuItem(route:TRoutes. media, icon: Iconsax.image, itemName: 'Media'),
+                 const TMenuItem(route:TRoutes. absensi, icon: Iconsax.user, itemName: 'Absensi'),
+                 ],
               ),)
             ],
           ),
