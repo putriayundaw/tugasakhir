@@ -21,6 +21,7 @@ class App extends StatelessWidget {
       initialBinding: GeneralBindings(),
       initialRoute: TRoutes.login,
       unknownRoute: GetPage(name:'/page-not-found' , page: () => const Scaffold(body: Center(child: Text('Page Not Found')))),
+      
     );
   }
 }

@@ -11,8 +11,8 @@ class TTableActionButtons extends StatelessWidget {
     this.edit = true,
     this.delete = true,
     this.onViewPressed,
-    this.onEditPressed,
-    this.onDeletePressed,
+     required this.onEditPressed,
+    required this.onDeletePressed,
   });
 
   /// Flag to determine whether the view button is enabled
@@ -45,11 +45,14 @@ class TTableActionButtons extends StatelessWidget {
         if (edit)
           IconButton(
             onPressed: onEditPressed,
+            tooltip: 'Edit Product',
             icon: const Icon(Iconsax.pen_add, color: TColors.primary),
+
           ),
         if (delete)
           IconButton(
             onPressed: onDeletePressed,
+            tooltip: 'Delete Product',
             icon: const Icon(Iconsax.trash, color: TColors.error),
           ),
       ],

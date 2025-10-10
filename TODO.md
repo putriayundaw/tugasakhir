@@ -1,0 +1,2 @@
+- [x] Add import for routes.dart in headers.dart
+- [x] Wrap the Column containing userName and userEmail with InkWell to make it clickable to edit profile page

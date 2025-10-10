@@ -117,4 +117,30 @@ class UserModel {
       updatedAt: updatedAt ?? this.updatedAt,
     );
   }
+
+  /// Validasi untuk email
+  bool isValidEmail() {
+    RegExp emailRegEx = RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+    return emailRegEx.hasMatch(this.email);
+  }
+
+  /// Validasi untuk nomor telepon
+  bool isValidPhoneNumber() {
+    RegExp phoneRegEx = RegExp(r"^\+?[1-9]\d{1,14}$");
+    return phoneRegEx.hasMatch(this.phoneNumber);
+  }
+
+  /// Memperbarui gambar profil
+  void updateProfilePicture(String newProfilePicture) {
+    this.profilePicture = newProfilePicture;
+  }
+
+  /// Mengubah `DateTime` menjadi string
+  String getCreatedAtString() {
+    return createdAt != null ? TFormatter.formatDate(createdAt!) : 'Not available';
+  }
+
+  String getUpdatedAtString() {
+    return updatedAt != null ? TFormatter.formatDate(updatedAt!) : 'Not available';
+  }
 }
